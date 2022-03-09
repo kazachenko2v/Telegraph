@@ -1,24 +1,12 @@
 @import url('reset.css');
 @import url('fonts.css');
 
-html {
-    height: 100%;
-}
-
 body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    // background: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 62.81%);
-    background: #F6F7F9;
+    background: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 62.81%);
 }
 
 a {
     cursor: pointer;
-}
-
-main {
-    flex: 1 1 auto;
 }
 
 ._counteiner {
@@ -86,13 +74,27 @@ main {
     color: #ffffff;
     font-family: Roboto-Bold, sans-serif;
     font-weight: bold;
-    background-color: #FF0043;
+    background-color: rgb(255, 0, 67);
+    transition: background-color .1s linear;
     cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(206, 34, 80);
 }
 
 ._bgimage {
     position: absolute;
     top: 0;
+}
+
+._anim-item {
+    transform: translate(-100%, 0);
+    transition: transform .5s;
+}
+
+._active {
+transform: translate(0, 0);
 }
 
 //////////////////////// header===========================================================
@@ -123,6 +125,7 @@ main {
 
 .title-page {
     position: relative;
+    overflow: hidden;
 }
 
 .title-page__bgimage {
@@ -509,7 +512,8 @@ main {
 .lets-start__counteiner {
     background: #00194A;
     border-radius: 25px;
-    padding: 50px 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .lets-start__content {
