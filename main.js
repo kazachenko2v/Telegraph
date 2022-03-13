@@ -1,22 +1,20 @@
-let animItems = document.querySelectorAll('._anim-item');
+let animItems = document.querySelectorAll('._bgimage');
 
 function animation() {
     for(let i = 0; i < animItems.length; i++) {
         let animItem = animItems[i];
-        let topPosition = window.pageYOffset + animItem.getBoundingClientRect().top;
-        let itemHeight = animItem.clientHeight;
+        let animItemOffset = window.pageYOffset + animItem.getBoundingClientRect().top;
+        let animItemHeight = animItem.clientHeight;
         
-        let animStartPoint = window.pageYOffset - itemHeight/2;
-        // console.log(window.pageYOffset);
-        if (window.pageYOffset > topPosition - itemHeight/4) {
-            console.log('START!!!!!!!!!!!!!!!!');
+        let animStartPoint = window.innerHeight - animItemHeight/2;
+        console.log(animStartPoint);
+        if (window.pageYOffset > animItemOffset - animStartPoint) {
             animItem.classList.add('_active');
 
         }
     }
-} 
-
+}
 
 window.addEventListener('scroll', animation);
 
-// setInterval(animation, 500);
+setInterval(animation, 500);
