@@ -7,7 +7,6 @@ function animation() {
         let animItemHeight = animItem.clientHeight;
         
         let animStartPoint = window.innerHeight - animItemHeight/2;
-        console.log(animStartPoint);
         if (window.pageYOffset > animItemOffset - animStartPoint) {
             animItem.classList.add('_active');
 
@@ -18,3 +17,10 @@ function animation() {
 window.addEventListener('scroll', animation);
 
 setInterval(animation, 500);
+
+
+let setContentElem = document.querySelectorAll('._set-content-elem');
+// console.log(setContentElem);
+for(let i of setContentElem) {
+    console.log(i.clientHeight)
+}
